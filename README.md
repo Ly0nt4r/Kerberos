@@ -15,6 +15,23 @@ El ticket tiene un periodo de vida. Trascurrido ese periodo el ticket necesita s
 El KDC almacena una clave criptográfica que sólo conocen la entidad de seguridad y el KDC. Esta clave se utiliza en los intercambios entre la entidad de seguridad y el KDC.
 Cuando el cliente quiere hablar (acceder) a un recursos (ubicado en un servidor), el cliente envía una solicitud al KDC y éste distribuye una clave de sesión única para que ambas partes se autentiquen mutuamente.
 
+**EJEMPLO PRACTICO**
+```
+Alberto ha entrado a trabajar a una empresa como contable, en ella, tienen una planta dedicada unicamente a su puesto de trabajo.
+La plantilla es amplia, y todos los trabajadores necesitan acceder a una base de datos central donde controlar temas contables (albaranes,facturas,salarios)
+
+Para ello el técnico informatico ha levantado un directorio activo en la planta, donde ha implementado el protocolo Kerberos.
+
+Ahora todos los trabajadores podrán acceder de forma centralizada a aquella base de dato, pero para ello necesitarán decirle a Kerberos que se tratan de un trabajador más,
+y no de un infiltrado, ya que la información que contiene dicha base de datos es contenido altamente sensible.
+
+¿COMO SE REALIZA EL PROCESO?
+Mira a continuación...
+```
+
+
+
+
 #
 ### Instalando y configurando Kerberos
 ### Atacando Kerberos
