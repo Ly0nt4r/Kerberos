@@ -52,7 +52,7 @@ Alberto desencriptará el TGT puesto que conoce y posee su clave secreta, y se l
 
 ![pixlr-bg-result (3)](https://user-images.githubusercontent.com/87484792/131132499-3cad1b7d-d93b-477c-83b0-1520969bc096.png)![pixlr-bg-result (4)](https://user-images.githubusercontent.com/87484792/131132849-9669bda1-3b9e-4d62-b320-572e870db5e7.png)
 
-El KDC le entregará a Alberto un TGS, dandome acceso a los servicios que le haya solicitado. Este nuevo ticket tiene fecha de caducidad, por lo que pasado el tiempo, deberemos de pedir un nuevo ticket. 
+El KDC le entregará a Alberto un TGS, dandole acceso a los servicios que le haya solicitado. Este nuevo ticket tiene fecha de caducidad, por lo que pasado el tiempo, deberemos de pedir un nuevo ticket. 
 
 
 #
