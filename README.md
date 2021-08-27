@@ -3,6 +3,30 @@
 #
 ## Todo sobre Kerberos
 #
+## Terminologia
+**Ticket Granting Ticket (TGT):** un ticket de concesión de tickets es un ticket de autenticación que se utiliza para solicitar tickets de servicio del TGS para recursos específicos del dominio.
+
+**Centro de distribución de claves (KDC) :** el Centro de distribución de claves es un servicio para emitir TGT y tickets de servicio que constan del Servicio de autenticación y el Servicio de concesión de tickets.
+
+**Servicio de autenticación (AS) :** el servicio de autenticación emite TGT para que los utilice el TGS en el dominio  para solicitar acceso a otras máquinas y tickets de servicio.
+
+**Servicio de concesión de tickets (TGS) :** el servicio de concesión de tickets toma el TGT y devuelve un ticket a una máquina del dominio.
+
+**Nombre principal de servicio (SPN) :** un nombre principal de servicio es un identificador que se le da a una instancia de servicio para asociar una instancia de servicio con una cuenta de servicio de dominio. Windows requiere que los servicios tengan una cuenta de servicio de dominio, por lo que un servicio necesita un conjunto de SPN.
+
+**Clave secreta a largo plazo de KDC (clave KDC LT)  :** la clave KDC se basa en la cuenta de servicio KRBTGT. Se utiliza para cifrar el TGT y firmar el PAC.
+
+**Clave secreta a largo plazo del cliente (clave LT del cliente)  :** la clave del cliente se basa en la computadora o la cuenta de servicio. Se utiliza para verificar la marca de tiempo cifrada y cifrar la clave de sesión.
+
+**Clave secreta de servicio a largo plazo (clave de servicio LT)  :** la clave de servicio se basa en la cuenta de servicio. Se utiliza para cifrar la parte del servicio del ticket de servicio y firmar el PAC.
+
+**Clave de sesión :** emitida por el KDC cuando se emite un TGT. El usuario proporcionará la clave de sesión al KDC junto con el TGT cuando solicite un ticket de servicio.
+
+**Certificado de atributo de privilegio (PAC) :** el PAC contiene toda la información relevante del usuario, se envía junto con el TGT al KDC para ser firmado por la clave Target LT y la clave KDC LT para validar al usuario.
+
+**KRBTGT:** Es un ticket especial que no esta asignado a un usuario en concreto. 
+
+#
 ### Funcionamiento (verificación, tickets, validación...)
 
 El protocolo de autenticación Kerberos lo que proporciona es un mecanismo que permite la autenticación entre cliente y servidor.
