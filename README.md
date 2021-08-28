@@ -88,6 +88,26 @@ El KDC le entregará a Alberto un TGS, dandole acceso a los servicios que le hay
 #### Kerbrute
 Kerbrute es una popular herramienta de enumeración que se utiliza para forzar y enumerar usuarios válidos del directorio activo mediante el abuso de la autenticación previa de Kerberos. Puede descarga kerbrute desde aqui: https://github.com/ropnop/kerbrute/releases  (Tiene varias versiones, eliga según su arquitectura)
 Cuando se usa la fuerza bruta a través de Kerberos, se puede usar la fuerza bruta enviando solo un único marco UDP al KDC, lo que le permite enumerar los usuarios del dominio a partir de una lista de palabras. Esto evitará que el administrador de sistema pueda detectar un inusual numero de peticiones de autenticación frente a kerberos
+
+*Metodo de utilización*
+```
+./kerbrute userenum --dc CONTROLLER.local -d CONTROLLER.local User.txt
+```
+
+`./kerbrute` Ejecutamos kerbrute, **recordar dar permisos de ejecución.**
+
+`userenum` Le decimos a kerbrute que queremos enumerar usuarios dentro de kerberos
+
+`--dc` Marca la ubicación del controlador de dominio (KDC) al que apuntar. Si está en blanco, se buscará a través de DNS
+
+`CONTROLLER.local` Es un servidor DNS de prueba
+
+`-d` El dominio completo a usar
+
+`User.txt` Lista de texto que contiene nombre de usuarios comunes para probar si dichos usuarios se enecuentran en la enumeración
+
+
+
 #### Kerberoasting - Rubeus
 #### Pass the Ticket - mimikatz
 #### Golden/Silver Ticket Attack
