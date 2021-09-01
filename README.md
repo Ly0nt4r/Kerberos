@@ -120,7 +120,18 @@ Ejemplo de uso:
 ``` hashcat -m 13100 -a 0 hash.txt Pass.txt```
 
 **En este post no se explicará el uso de hashcat**
-
 # 
+### AS-REP - Rubeus 
+AS-REP Roasting vuelca los hashes krbasrep5 de las cuentas de usuario que tienen la autenticación previa de Kerberos deshabilitada. A diferencia de Kerberoasting, estos usuarios no tienen que ser cuentas de servicio, el único requisito para poder tostar AS-REP a un usuario es que el usuario debe tener la autenticación previa desactivada.
+
+**Descripción general de tostado AS-REP**
+
+Durante la autenticación previa, el hash de los usuarios se utilizará para cifrar una marca de tiempo que el controlador de dominio intentará descifrar para validar que se está utilizando el hash correcto y que no se está reproduciendo una solicitud anterior. Después de validar la marca de tiempo, el KDC emitirá un TGT para el usuario. Si la autenticación previa está deshabilitada, puede solicitar cualquier dato de autenticación para cualquier usuario y el KDC devolverá un TGT cifrado que se puede descifrar sin conexión porque el KDC omite el paso de validar que el usuario es realmente quien dice ser.
+
+![l3wJhby](https://user-images.githubusercontent.com/87484792/131713005-77038b03-6e82-4572-866b-c4ed142186ac.png)
+
+-Como se puede comprobar, el paso es muy similar con Rubeus-
+
+
 #### Pass the Ticket - mimikatz
 #### Golden/Silver Ticket Attack
