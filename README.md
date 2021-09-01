@@ -107,7 +107,20 @@ Cuando se usa la fuerza bruta a través de Kerberos, se puede usar la fuerza bru
 `User.txt` Lista de texto que contiene nombre de usuarios comunes para probar si dichos usuarios se enecuentran en la enumeración
 
 
-
+#
 #### Kerberoasting - Rubeus
+Kerberoasting permite a un usuario solicitar un ticket de servicio para cualquier servicio con un SPN registrado y luego usar ese ticket para descifrar la contraseña del servicio. Si el servicio tiene un SPN registrado, entonces puede ser Kerberoastable; sin embargo, el éxito del ataque depende de cuán fuerte sea la contraseña y si es rastreable, así como de los privilegios de la cuenta de servicio crackeada.
+
+Para realizar esta acción utilizaremos **Rubeus**
+![kerberoasting](https://user-images.githubusercontent.com/87484792/131710134-fc707d2f-6f92-437b-b0df-fb736c7b6bec.png)
+
+Como podemos observar en la imagen, hemos conseguido un HASH. Este hash lo guardaremos en nuestra maquina atacante, lo meteremos en un archivo e intentaremos a traves de herramientas ( en este caso hashcat ) obtener en texto claro la contraseña. 
+
+Ejemplo de uso:
+``` hashcat -m 13100 -a 0 hash.txt Pass.txt```
+
+**En este post no se explicará el uso de hashcat**
+
+# 
 #### Pass the Ticket - mimikatz
 #### Golden/Silver Ticket Attack
